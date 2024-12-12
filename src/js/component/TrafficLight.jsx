@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import "../../styles/index.css";
 
-const Trafficligth = () => {
+const TrafficLight = () => {
   const [currentLight, setCurrentLight] = useState("red");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentLight((luzPrev) => {
-        if (luzPrev === "red") return "yellow";
-        if (luzPrev === "yellow") return "green";
+      setCurrentLight((lightPrev) => {
+        if (lightPrev === "red") return "yellow";
+        if (lightPrev === "yellow") return "green";
         return "red";
       });
     }, 3000);
@@ -36,4 +37,4 @@ const Trafficligth = () => {
   );
 };
 
-export default Trafficligth;
+export default TrafficLight;
