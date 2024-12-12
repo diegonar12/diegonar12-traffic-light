@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 const Trafficligth = () => {
-  const [currentLigth, setCurrentLigth] = useState("red");
+  const [currentLight, setCurrentLight] = useState("red");
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentLigth((luzPrev) => {
+      setCurrentLight((luzPrev) => {
         if (luzPrev === "red") return "yellow";
         if (luzPrev === "yellow") return "green";
         return "red";
@@ -14,13 +14,24 @@ const Trafficligth = () => {
     return () => clearInterval(intervalId);
   });
 
+  const handleClick = (e) => {
+    setCurrentLight(e);
+  };
+
   return (
     <div className="traffic-light">
-      <div className={`light ${currentLigth === "red" ? "red" : ""}`}></div>
       <div
-        className={`light ${currentLigth === "yellow" ? "yellow" : ""}`}
+        className={`light ${currentLight === "red" ? "red" : ""}`}
+        onClick={() => handleClick("red")}
       ></div>
-      <div className={`light ${currentLigth === "green" ? "green" : ""}`}></div>
+      <div
+        className={`light ${currentLight === "yellow" ? "yellow" : ""}`}
+        onClick={() => handleClick("yellow")}
+      ></div>
+      <div
+        className={`light ${currentLight === "green" ? "green" : ""}`}
+        onClick={() => handleClick("green")}
+      ></div>
     </div>
   );
 };
