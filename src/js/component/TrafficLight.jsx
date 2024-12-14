@@ -22,16 +22,17 @@ const TrafficLight = () => {
   return (
     <div className="traffic-light">
       <div
-        className={`light ${currentLight === "red" ? "red" : ""}`}
-        onClick={() => handleClick("red")}
+        className={`light ${currentLight === "red" ? "red flash" : ""}`}
+        onClick={() => setCurrentLight("red")}
+      ></div>
+
+      <div
+        className={`light ${currentLight === "yellow" ? "yellow flash" : ""}`}
+        onClick={() => setCurrentLight("yellow")}
       ></div>
       <div
-        className={`light ${currentLight === "yellow" ? "yellow" : ""}`}
-        onClick={() => handleClick("yellow")}
-      ></div>
-      <div
-        className={`light ${currentLight === "green" ? "green" : ""}`}
-        onClick={() => handleClick("green")}
+        className={`light ${currentLight === "green" ? "green flash" : ""}`}
+        onClick={() => setCurrentLight("green")}
       ></div>
     </div>
   );

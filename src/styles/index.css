@@ -3,14 +3,18 @@
   background-color: black;
   border-radius: 10px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .light {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin: 10px auto;
+  margin: 10px 0;
   background-color: gray;
+  transition: box-shadow 0.5s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .red {
@@ -23,4 +27,20 @@
 
 .green {
   background-color: green;
+}
+
+.flash {
+  box-shadow: 0 0 30px 20px rgba(255, 100, 100, 0.8);
+}
+
+.red.flash {
+  box-shadow: 0 0 40px 25px rgba(255, 50, 50, 0.9);
+}
+
+.yellow.flash {
+  box-shadow: 0 0 40px 25px rgba(255, 255, 150, 0.9);
+}
+
+.green.flash {
+  box-shadow: 0 0 40px 25px rgba(100, 255, 100, 0.9);
 }
