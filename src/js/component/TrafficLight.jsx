@@ -15,10 +15,6 @@ const TrafficLight = () => {
     return () => clearInterval(intervalId);
   });
 
-  const handleClick = (e) => {
-    setCurrentLight(e);
-  };
-
   return (
     <div className="traffic-light">
       <div
