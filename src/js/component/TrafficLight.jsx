@@ -13,21 +13,22 @@ const TrafficLight = () => {
       });
     }, 3000);
     return () => clearInterval(intervalId);
-  });
+  }, []);
 
   return (
     <div className="traffic-light">
       <div
-        className={`light ${currentLight === "red" ? "red flash" : ""}`}
+        className={`light red ${currentLight === "red" ? "flash" : ""}`}
         onClick={() => setCurrentLight("red")}
       ></div>
 
       <div
-        className={`light ${currentLight === "yellow" ? "yellow flash" : ""}`}
+        className={`light yellow ${currentLight === "yellow" ? "flash" : ""}`}
         onClick={() => setCurrentLight("yellow")}
       ></div>
+
       <div
-        className={`light ${currentLight === "green" ? "green flash" : ""}`}
+        className={`light green ${currentLight === "green" ? "flash" : ""}`}
         onClick={() => setCurrentLight("green")}
       ></div>
     </div>
